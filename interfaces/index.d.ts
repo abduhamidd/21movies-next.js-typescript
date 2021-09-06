@@ -13,7 +13,7 @@ export interface IFilmCard {
     id: ID
     title: string
     producedBy: string
-    coverImg: IMG
+    coverIMG: IMG
     genres: string[]
     countries: string[]
     year?: string

@@ -1,0 +1,125 @@
+@import "./env.scss";
+
+h1,
+.h1-fk {
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 144px;
+    line-height: 192px;
+    color: #c4c4c4;
+
+    @media screen and (max-width: 1300px) {
+        font-size: calc(8vw + 4vh);
+        line-height: normal;
+    }
+
+    @media screen and (max-width: 655px) {
+        font-size: calc(6vw + 3vh);
+        line-height: normal;
+    }
+}
+
+h2,
+.h2-fk {
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 72px;
+    line-height: 96px;
+    color: #c4c4c4;
+
+    @media screen and (max-width: 655px) {
+        font-size: calc(5vw + 3vh);
+        line-height: normal;
+    }
+}
+
+h3,
+.h3-fk {
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 27px;
+    color: #c4c4c4;
+
+    @media screen and (max-width: 1200px) {
+        font-size: 17px;
+    }
+
+    @media screen and (max-width: 1000px) {
+        font-size: 15px;
+    }
+}
+
+h4,
+.h4-fk {
+    font-family: $secondFont;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    color: #c4c4c4;
+
+    i {
+        font-style: italic;
+    }
+
+    @media screen and (max-width: 655px) {
+        font-size: 15px;
+    }
+}
+
+h5,
+.h5-fk {
+    font-family: $secondFont;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: uppercase;
+    color: #c4c4c4;
+}
+
+h6,
+.h6-fk {
+    font-family: $secondFont;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    color: #c4c4c4;
+
+    @media screen and (min-width: 1660px) {
+        font-size: 16px;
+    }
+}
+
+.logo {
+    font-family: $secondFont;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0.1em;
+    color: #dadada;
+}
+
+p,
+li,
+a {
+    font-family: $secondFont;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    color: #696969;
+}
+
+p {
+    @media screen and (min-width: 1660px) {
+        font-size: 16px;
+        line-height: 19px;
+    }
+}

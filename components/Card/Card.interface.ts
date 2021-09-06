@@ -3,7 +3,7 @@ export interface ICardProps {
     AS: string
     ALT?: string
 
-    img: string
+    img?: string
     img2?: string
     h3: string
     h6top: string

@@ -1,0 +1,33 @@
+@import "./components/Card";
+@import "./components/Chooser";
+@import "./components/Grid";
+@import "./components/Layout";
+@import "./components/Header";
+@import "./components/Notification";
+@import "./cc";
+@import "./typography";
+@import "./reset";
+*::selection {
+    background-color: rgb(58, 58, 58);
+    color: rgb(196, 196, 196);
+}
+
+body {
+    min-height: 100vh;
+    min-width: 100vw;
+    overflow-x: hidden;
+    margin: 0 auto;
+    background-color: $black;
+
+    &::-webkit-scrollbar {
+        width: 0 !important;
+    }
+
+    &::scrollbar {
+        width: 0;
+    }
+
+    img {
+        color: rgb(187, 187, 187);
+    }
+}
