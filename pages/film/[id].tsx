@@ -7,7 +7,7 @@ import {GetStaticPropsContext, GetStaticProps, GetStaticPaths} from 'next';
 import {ApolloClient} from '@apollo/client';
 import {InMemoryCache} from '@apollo/client';
 import {gql} from '@apollo/client';
-import {ALL_FILM_FIELDS, ALL_TIME_FIELDS} from './../../graphql/fragments';
+import {ALL_FILM_FIELDS,} from './../../graphql/fragments';
 import router, {useRouter} from 'next/router';
 
 interface FilmProps {

@@ -13,7 +13,7 @@ export const ALL_PERSON_FIELDS = {
         mostPopularFilm {
           h3
           h6top
-          hh6bot
+          h6bot
           id
           img
         }
