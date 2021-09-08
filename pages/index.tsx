@@ -13,7 +13,7 @@ import {__filterFilms} from './../utils/__filter';
 const IndexPage = ({films}: IndexProps) => {
   const [genre, setGenre] = useState('all');
   const [year, setYear] = useState('all');
-
+  const result = __filterFilms([genre, year], films);
   return (
     <>
       <Layout>
@@ -90,21 +90,22 @@ const IndexPage = ({films}: IndexProps) => {
           </ul>
         </Chooser>
         <Grid>
-          {__filterFilms([genre, year], films)?.map((film) => {
-            return (
-              <Card
-                HREF={`/film/[id]`}
-                AS={`/film/${film.id}`}
-                ALT={`Film ${film.title} ${film.producedBy}. ${film.year}. ${film.genres[0]}`}
-                key={film.id}
-                h3={film.title}
-                h6top={film.producedBy}
-                h6bot={film.countries[0]}
-                img={film?.coverIMG}
-                type="single"
-              />
-            );
-          })}
+          {result &&
+            result.map((film) => {
+              return (
+                <Card
+                  HREF={`/film/[id]`}
+                  AS={`/film/${film.id}`}
+                  ALT={`Film ${film.title} ${film.producedBy}. ${film.year}. ${film.genres[0]}`}
+                  key={film.id}
+                  h3={film.title}
+                  h6top={film.producedBy}
+                  h6bot={film.countries[0]}
+                  img={film?.coverIMG}
+                  type="single"
+                />
+              );
+            })}
         </Grid>
       </Layout>
     </>

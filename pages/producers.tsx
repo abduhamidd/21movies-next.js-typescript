@@ -19,6 +19,7 @@ interface ProducerPageProps {
 const ProducersPage = ({producers}: ProducerPageProps): JSX.Element => {
   const [country, setCountry] = useState('all');
   const [year, setYear] = useState('all');
+  const result = __filterPersons([country, year], producers);
   return (
     <Layout>
       <Meta
@@ -93,22 +94,23 @@ const ProducersPage = ({producers}: ProducerPageProps): JSX.Element => {
         </ul>
       </Chooser>
       <Grid>
-        {__filterPersons([country, year], producers)?.map((producer) => {
-          return (
-            <Card
-              key={producer.id}
-              HREF={`/person/[id]`}
-              AS={`/person/${producer.id}`}
-              ALT={`Producer ${producer.name}, ${producer.countries[0]}, ${producer.yearsPopular[0]}`}
-              h3={producer.name}
-              h6bot={producer.countries[0]}
-              h6top={producer.title}
-              img={producer.imgs[0]}
-              img2={producer.imgs[1]}
-              type="double"
-            />
-          );
-        })}
+        {result &&
+          result.map((producer) => {
+            return (
+              <Card
+                key={producer.id}
+                HREF={`/person/[id]`}
+                AS={`/person/${producer.id}`}
+                ALT={`Producer ${producer.name}, ${producer.countries[0]}, ${producer.yearsPopular[0]}`}
+                h3={producer.name}
+                h6bot={producer.countries[0]}
+                h6top={producer.title}
+                img={producer.imgs[0]}
+                img2={producer.imgs[1]}
+                type="double"
+              />
+            );
+          })}
       </Grid>
     </Layout>
   );
@@ -131,4 +133,4 @@ export const getStaticProps: GetStaticProps<ProducerPageProps> = async () => {
     throw new Error(`Error:${error}`);
   }
 };
-export default ProducersPage
+export default ProducersPage;

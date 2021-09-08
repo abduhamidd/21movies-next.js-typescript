@@ -17,6 +17,8 @@ interface ActersPageProps {
 const ActersPage = ({acters}: ActersPageProps): JSX.Element => {
   const [country, setCountry] = useState('all');
   const [year, setYear] = useState('all');
+  const result = __filterPersons([country, year], acters);
+
   function isTrue(param: any, is: any) {
     if (param === is) {
       return 'bright';
@@ -98,22 +100,23 @@ const ActersPage = ({acters}: ActersPageProps): JSX.Element => {
         </ul>
       </Chooser>
       <Grid>
-        {__filterPersons([country, year], acters)?.map((acter) => {
-          return (
-            <Card
-              key={acter.id}
-              HREF={`/person/[id]`}
-              AS={`/person/${acter.id}`}
-              ALT={`acter ${acter.name}, ${acter.countries[0]}, ${acter.yearsPopular[0]}`}
-              h3={acter.name}
-              h6bot={acter.countries[0]}
-              h6top={acter.title}
-              img={acter.imgs[0]}
-              img2={acter.imgs[1]}
-              type="double"
-            />
-          );
-        })}
+        {result &&
+          result.map((acter: any) => {
+            return (
+              <Card
+                key={acter.id}
+                HREF={`/person/[id]`}
+                AS={`/person/${acter.id}`}
+                ALT={`acter ${acter.name}, ${acter.countries[0]}, ${acter.yearsPopular[0]}`}
+                h3={acter.name}
+                h6bot={acter.countries[0]}
+                h6top={acter.title}
+                img={acter.imgs[0]}
+                img2={acter.imgs[1]}
+                type="double"
+              />
+            );
+          })}
       </Grid>
     </Layout>
   );

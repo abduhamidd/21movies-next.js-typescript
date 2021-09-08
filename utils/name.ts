@@ -9,6 +9,8 @@ function h1(name: string): [string, string] {
         if (firstName.length < 4) return [firstName, secondName];
         return [secondName, firstName];
     }
+    return [firstName, secondName]
+
 }
 
 export default h1;

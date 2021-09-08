@@ -134,7 +134,7 @@ export const getStaticProps: GetStaticProps<PersonPageProps> = async (
   }
 };
 
-export const getStaticPaths: GetStaticPaths = async ctx=> {
+export const getStaticPaths: GetStaticPaths = async (ctx) => {
   try {
     const client = new ApolloClient({
       uri: process.env.API_URL,
