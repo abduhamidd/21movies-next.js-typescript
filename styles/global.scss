@@ -6,9 +6,12 @@
 @import "./components/Notification";
 @import "./cc";
 @import "./typography";
-@import "./pages/film/[id].scss";
+@import "./pages/film/[id]";
 @import "./reset";
-@import "./pages/person/[id].scss";
+@import "./pages/person/[id]";
+@import "./pages/time/[id]";
+@import "./pages/time/index";
+@import "./pages/404";
 *::selection {
     background-color: rgb(58, 58, 58);
     color: rgb(196, 196, 196);

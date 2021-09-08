@@ -1,0 +1,21 @@
+.custom404 {
+    width: 100%;
+    height: calc(100vh - 76px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    div {
+        position: relative;
+        top: -72px;
+
+        h1 {
+            font-size: 220px;
+            margin-top: -60px;
+
+            @media screen and (max-width: 600px) {
+                font-size: 120px;
+            }
+        }
+    }
+}
